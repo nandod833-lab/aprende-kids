@@ -1,0 +1,6 @@
+{
+  "name": "Aprende Kids - Recursos Psicopedagógicos",
+  "description": "Página oficial do Aprende Kids com mais de 50 recursos psicopedagógicos em PDF para aprendizagem infantil, bônus exclusivos e garantia de 7 dias.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
