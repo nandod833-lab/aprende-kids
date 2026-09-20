@@ -46,16 +46,23 @@ export default function HeaderHero({ onCtaClick, onScrollDown }: HeaderHeroProps
 
         {/* Central Visual Showcase / Original PDF Bundle Mockup */}
         <div className="relative w-full max-w-lg my-2 sm:my-4 flex justify-center items-center">
-          <img
-            src="https://i.ibb.co/TMcRw04y/hero-mockup.png"
-            alt="Coleção de Recursos Psicopedagógicos para Aprendizagem Infantil"
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-            sizes="(max-width: 640px) 100vw, 512px"
-            referrerPolicy="no-referrer"
-            className="w-full h-auto max-h-[380px] sm:max-h-[440px] object-contain drop-shadow-2xl"
-          />
+          <picture>
+            <source
+              srcSet="/assets/hero-mockup.webp"
+              type="image/webp"
+            />
+            <img
+              src="/assets/hero-mockup.png"
+              alt="Coleção de Recursos Psicopedagógicos para Aprendizagem Infantil"
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              width="1200"
+              height="900"
+              sizes="(max-width: 640px) 100vw, 512px"
+              className="w-full h-auto max-h-[380px] sm:max-h-[440px] object-contain drop-shadow-2xl"
+            />
+          </picture>
         </div>
 
         {/* Feature description card */}

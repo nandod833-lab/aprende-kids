@@ -137,12 +137,21 @@ export default function OfferPricingSection({ onCtaClick }: OfferPricingSectionP
 
               {/* Clean Mockup Image */}
               <div className="my-4 flex justify-center">
-                <img
-                  src="/assets/pdf_extracted/offer-mockup.png"
-                  alt="Aprende Kids Kit Completo"
-                  className="w-full max-w-[280px] sm:max-w-[340px] h-48 sm:h-60 object-contain drop-shadow-2xl"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    srcSet="/assets/offer-mockup.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/assets/pdf_extracted/offer-mockup.png"
+                    alt="Aprende Kids Kit Completo"
+                    width="700"
+                    height="500"
+                    className="w-full max-w-[280px] sm:max-w-[340px] h-48 sm:h-60 object-contain drop-shadow-2xl"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
 
               {/* Price */}
