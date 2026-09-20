@@ -30,6 +30,8 @@ export default function BookCover({ pack, className = '' }: BookCoverProps) {
           alt={pack.title}
           className="w-full max-w-[340px] sm:max-w-[420px] h-auto object-contain drop-shadow-xl"
           loading="lazy"
+          fetchPriority="low"
+          decoding="async"
         />
       </div>
     </div>

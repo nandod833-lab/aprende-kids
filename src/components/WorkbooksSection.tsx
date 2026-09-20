@@ -23,7 +23,7 @@ export default function WorkbooksSection({ onCtaClick }: WorkbooksSectionProps) 
   };
 
   return (
-    <section id="workbooks-section" className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
+    <section id="workbooks-section" className="defer-render py-12 sm:py-16 px-4 sm:px-6 bg-white">
       <div className="max-w-3xl mx-auto">
         
         {/* Section Header */}

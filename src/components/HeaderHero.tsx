@@ -52,6 +52,7 @@ export default function HeaderHero({ onCtaClick, onScrollDown }: HeaderHeroProps
             fetchPriority="high"
             loading="eager"
             decoding="async"
+            sizes="(max-width: 640px) 100vw, 512px"
             referrerPolicy="no-referrer"
             className="w-full h-auto max-h-[380px] sm:max-h-[440px] object-contain drop-shadow-2xl"
           />

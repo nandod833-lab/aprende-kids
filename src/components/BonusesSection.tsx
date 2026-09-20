@@ -15,7 +15,7 @@ const BONUS_IMAGE_MAP: Record<number, string> = {
 
 export default function BonusesSection({ onCtaClick }: BonusesSectionProps) {
   return (
-    <section id="bonuses-section" className="py-14 sm:py-20 px-4 sm:px-6 bg-slate-50 border-t border-slate-200">
+    <section id="bonuses-section" className="defer-render py-14 sm:py-20 px-4 sm:px-6 bg-slate-50 border-t border-slate-200">
       <div className="max-w-3xl mx-auto">
         
         {/* Header */}
@@ -51,6 +51,8 @@ export default function BonusesSection({ onCtaClick }: BonusesSectionProps) {
                     alt={bonus.title}
                     className="w-full max-w-[320px] sm:max-w-[380px] h-auto object-contain drop-shadow-md"
                     loading="lazy"
+                    fetchPriority="low"
+                    decoding="async"
                   />
                 </div>
 

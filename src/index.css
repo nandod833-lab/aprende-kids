@@ -57,3 +57,9 @@
 .pause-on-hover:hover {
   animation-play-state: paused;
 }
+
+/* Evita renderizar seções longas antes de elas entrarem no viewport. */
+.defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
