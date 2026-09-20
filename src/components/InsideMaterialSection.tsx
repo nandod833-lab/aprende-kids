@@ -54,27 +54,27 @@ export default function InsideMaterialSection({ onCtaClick }: InsideMaterialSect
   const row1Images: ActivityImage[] = [
     {
       id: 'esc-01',
-      src: 'https://i.ibb.co/twbPsfTW/esc-01.webp',
+      src: '/assets/activities/esc-01.webp',
       alt: 'Atividade Cognitiva 01'
     },
     {
       id: 'esc-02',
-      src: 'https://i.ibb.co/DfgLPn2T/esc-02.webp',
+      src: '/assets/activities/esc-02.webp',
       alt: 'Atividade Cognitiva 02'
     },
     {
       id: 'esc-03',
-      src: 'https://i.ibb.co/sJN3Jd9h/esc-03.webp',
+      src: '/assets/activities/esc-03.webp',
       alt: 'Atividade Cognitiva 03'
     },
     {
       id: 'esc-06',
-      src: 'https://i.ibb.co/qLNjkXGL/esc-06.webp',
+      src: '/assets/activities/esc-06.webp',
       alt: 'Atividade Cognitiva 06'
     },
     {
       id: 'ex-01',
-      src: 'https://i.ibb.co/RpQPmNsS/ex-01.webp',
+      src: '/assets/activities/ex-01.webp',
       alt: 'Exemplo de Exercício 01'
     }
   ];
@@ -83,32 +83,32 @@ export default function InsideMaterialSection({ onCtaClick }: InsideMaterialSect
   const row2Images: ActivityImage[] = [
     {
       id: 'ex-03',
-      src: 'https://i.ibb.co/BD5D9gB/ex-03.webp',
+      src: '/assets/activities/ex-03.webp',
       alt: 'Exemplo de Exercício 03'
     },
     {
       id: 'ex-04',
-      src: 'https://i.ibb.co/JFxhFrnh/ex-04.webp',
+      src: '/assets/activities/ex-04.webp',
       alt: 'Exemplo de Exercício 04'
     },
     {
       id: 'ex-05',
-      src: 'https://i.ibb.co/996t0VM8/ex-05.webp',
+      src: '/assets/activities/ex-05.webp',
       alt: 'Exemplo de Exercício 05'
     },
     {
       id: 'ex-06',
-      src: 'https://i.ibb.co/TDjYv7dZ/ex-06.webp',
+      src: '/assets/activities/ex-06.webp',
       alt: 'Exemplo de Exercício 06'
     },
     {
       id: 'esc-01-rep',
-      src: 'https://i.ibb.co/twbPsfTW/esc-01.webp',
+      src: '/assets/activities/esc-01.webp',
       alt: 'Atividade Cognitiva Extra'
     },
     {
       id: 'esc-02-rep',
-      src: 'https://i.ibb.co/DfgLPn2T/esc-02.webp',
+      src: '/assets/activities/esc-02.webp',
       alt: 'Atividade Cognitiva 02'
     }
   ];
@@ -198,7 +198,7 @@ export default function InsideMaterialSection({ onCtaClick }: InsideMaterialSect
         <div className="mt-10 sm:mt-12 text-center relative z-10 px-4">
           <button
             type="button"
-            onClick={onCtaClick}
+            onClick={() => onCtaClick && onCtaClick()}
             id="btn-inside-material-cta"
             className="inline-flex items-center justify-center gap-2.5 py-3.5 sm:py-4 px-6 sm:px-8 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-display font-black text-sm sm:text-base uppercase tracking-wider shadow-xl hover:shadow-amber-400/40 transform active:scale-95 transition-all cursor-pointer"
           >

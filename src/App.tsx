@@ -38,12 +38,13 @@ export default function App() {
     }
   };
 
-  const handleOpenCheckout = (plan: 'basic' | 'complete' = 'complete') => {
-    const url = CHECKOUT_URLS[plan];
+  const handleOpenCheckout = (plan?: 'basic' | 'complete' | unknown) => {
+    const safePlan: 'basic' | 'complete' = plan === 'basic' ? 'basic' : 'complete';
+    const url = CHECKOUT_URLS[safePlan];
     if (url) {
       window.open(url, '_blank', 'noopener,noreferrer');
     } else {
-      setSelectedPlan(plan);
+      setSelectedPlan(safePlan);
       setIsCheckoutOpen(true);
     }
   };

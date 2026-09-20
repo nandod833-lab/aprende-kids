@@ -79,7 +79,7 @@ export default function HeaderHero({ onCtaClick, onScrollDown }: HeaderHeroProps
         {/* High Conversion Green CTA Button */}
         <div className="w-full max-w-md px-2">
           <button
-            onClick={onCtaClick}
+            onClick={() => onCtaClick()}
             id="hero-cta-button"
             className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-display font-black text-lg sm:text-xl tracking-wide uppercase shadow-2xl hover:shadow-emerald-500/50 transform active:scale-95 transition-all duration-200 border-2 border-emerald-300 flex items-center justify-center gap-3 animate-pulse-slow cursor-pointer"
           >

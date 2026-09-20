@@ -84,7 +84,7 @@ export default function BonusesSection({ onCtaClick }: BonusesSectionProps) {
         {/* Green CTA Button */}
         <div className="mt-12 text-center max-w-md mx-auto">
           <button
-            onClick={onCtaClick}
+            onClick={() => onCtaClick()}
             id="bonuses-cta-button"
             className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-display font-black text-lg sm:text-xl tracking-wide uppercase shadow-xl hover:shadow-emerald-500/40 transform active:scale-95 transition-all duration-200 border-2 border-emerald-300 flex items-center justify-center gap-3 cursor-pointer"
           >
